@@ -3,6 +3,8 @@ import { getUserRepos } from "../../../services/api";
 import { KEYS } from "../../keys";
 
 async function fetcher(userName: string) {
+  if (userName === "") throw new Error("Data request invalid");
+
   const repos = await getUserRepos(userName);
   return repos;
 }

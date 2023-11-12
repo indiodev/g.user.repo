@@ -5,7 +5,7 @@ import { getUser } from "../../../services/api";
 import { KEYS } from "../../keys";
 
 async function fetcher(userName: string) {
-  if (userName === "") throw new Error("Invalid value");
+  if (userName === "") throw new Error("Data request invalid");
 
   const user = await getUser(userName);
   return user;
